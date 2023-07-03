@@ -30,3 +30,9 @@ jobs:
       run: |
         df -h
         du -hd 1 / 2> /dev/null
+    - name: Explore home
+      run: |
+        du -hd 1 /home/ 2> /dev/null
+    - name: Explore opt
+      run: |
+        du -hd 1 /opt 2> /dev/null
