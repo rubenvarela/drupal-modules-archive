@@ -16,12 +16,12 @@ jobs:
     - name: Disk space #1
       run: |
         df -h
-        du -hd 1 / 2> /dev/null
+        du -hd 1 / 2> /dev/null || true
     - uses: actions/checkout@v3
     - name: Disk space #2
       run: |
         df -h
-        du -hd 1 / 2>/dev/null
+        du -hd 1 / 2>/dev/null || true
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -29,10 +29,10 @@ jobs:
     - name: Explore disk space
       run: |
         df -h
-        du -hd 1 / 2> /dev/null
+        du -hd 1 / 2> /dev/null || true
     - name: Explore home
       run: |
-        du -hd 1 /home/ 2> /dev/null
+        du -hd 1 /home/ 2> /dev/null || true
     - name: Explore opt
       run: |
-        du -hd 1 /opt 2> /dev/null
+        du -hd 1 /opt 2> /dev/null || true
