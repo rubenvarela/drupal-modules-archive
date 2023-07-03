@@ -18,6 +18,9 @@ jobs:
         df -h
         du -hd 1 / 2> /dev/null || true
     - uses: actions/checkout@v3
+      with:
+        sparse-checkout: |
+          .
     - name: Disk space #2
       run: |
         df -h
