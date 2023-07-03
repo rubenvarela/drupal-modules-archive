@@ -36,3 +36,6 @@ jobs:
     - name: Explore opt
       run: |
         du -hd 1 /opt 2> /dev/null || true
+    - name: Explore usr
+      run: |
+        du -hd 1 /usr 2> /dev/null || true
