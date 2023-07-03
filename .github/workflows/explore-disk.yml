@@ -13,11 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Disk space #1
+      run: |
+        df -h
+        du -hd 1 / 2> /dev/null
     - uses: actions/checkout@v3
+    - name: Disk space #2
+      run: |
+        df -h
+        du -hd 1 / 2>/dev/null
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: Explore root disk
+    - name: Explore disk space
       run: |
-        du -hd 1 /
+        df -h
+        du -hd 1 / 2> /dev/null
