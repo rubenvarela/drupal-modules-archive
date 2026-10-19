@@ -6,7 +6,8 @@ import os
 import time
 from pathlib import Path
 
-RETRYABLE_403_MESSAGES = ('Timed out validating rule',)
+# GitHub words its 403 rule-validation timeouts in more than one way.
+RETRYABLE_403_MARKERS = ('timeout', 'timed out')
 
 
 def create_file_with_retry(repo, path, message, content, branch, attempts=4, backoff_seconds=10):
@@ -16,7 +17,7 @@ def create_file_with_retry(repo, path, message, content, branch, attempts=4, bac
             return
         except github.GithubException as e:
             data_message = (e.data or {}).get('message', '') if isinstance(e.data, dict) else ''
-            is_retryable = e.status == 403 and any(m in data_message for m in RETRYABLE_403_MESSAGES)
+            is_retryable = e.status == 403 and any(m in data_message.lower() for m in RETRYABLE_403_MARKERS)
             if not is_retryable or attempt == attempts:
                 raise
             print(f"Retryable error creating {path} (attempt {attempt}/{attempts}): {data_message}")
