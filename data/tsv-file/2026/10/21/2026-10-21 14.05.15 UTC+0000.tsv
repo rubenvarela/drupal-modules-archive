@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>5xx - Server Error</title>
+  <style>
+  html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 83%;
+    font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    color: #222222;
+  }
+  body {
+    line-height: 1.38461em;
+    background-color: #FFFFFF;
+  }
+  a, a:visited, a:active {
+    color: #0678BE;
+    text-decoration: none;
+  }
+  p {
+    margin: 0 0 1.385em;
+  }
+  #header {
+    width: 100%;
+    height: 140px;
+    background-color: #0678BE;
+  }
+  #header div {
+    width: 960px;
+    margin: auto;
+    padding-top: 40px;
+  }
+  #content {
+    width: 960px;
+    margin: auto;
+    margin-top: 2.5em;
+  }
+  #first {
+    float: left;
+    width: 100%;
+    font-size: 1.6153em;
+    line-height: 1.38461em;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  #footer {
+    clear: both;
+    padding-top: 20px;
+    color: #666666;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #E2E2DF;
+  }
+  </style>
+</head>
+<body>
+<div id="header">
+<div>
+<img src="https://ftp.drupal.org/files/drupal.png" />
+</div>
+</div>
+<div id="content">
+<div id="first">
+<h2>5xx Server Error</h2>
+<p>Drupal.org’s servers encountered an error handling your request. Please try again in a few moments. If the problem persists, check <a href="https://mastodon.social/@drupalinfra">mastodon.social/@drupalinfra</a> for updates.</p>
+</div>
+<p id="footer">Drupal is a <a href="https://www.drupal.org/about/trademark">registered trademark</a> of <a href="https://dri.es">Dries Buytaert</a>.</p>
+</div>
+</body>
+   </html>
